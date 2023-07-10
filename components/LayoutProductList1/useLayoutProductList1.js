@@ -38,17 +38,21 @@ const useLayoutProductList1 = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const products = await shopify.product.fetchAll()
-      setProducts(
-        JSON.parse(
-          JSON.stringify(
-            products.sort(
-              (a, b) =>
-                +b.variants[0].price.amount - +a.variants[0].price.amount
+      try {
+        const products = await shopify.product.fetchAll()
+        setProducts(
+          JSON.parse(
+            JSON.stringify(
+              products.sort(
+                (a, b) =>
+                  +b.variants[0].price.amount - +a.variants[0].price.amount
+              )
             )
           )
         )
-      )
+      } catch (error) {
+        alert('Incorrect Shopify Configuration')
+      }
     }
     fetchProducts()
   }, [])

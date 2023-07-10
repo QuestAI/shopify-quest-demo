@@ -1,8 +1,23 @@
+# Shopify - Quest Template
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+All UI components were build with Quest.ai
+
+
 
 ## Getting Started
 
-First, run the development server:
+1) First, you need to get your Shopify Storefront Token and Storefront name and put it in the `next.config.js` file
+* ##### [How to get Shopify Storefront Token](https://www.shopify.com/partners/blog/17056443-how-to-generate-a-shopify-api-token)
+
+* #####   How to get Shopify Storefront name Token
+  * Log in to your Shopify admin.
+  * Look in the URL address bar at the top of the screen. You should see something like STORENAME.myshopify.com/admin. ("STORENAME" is an example-- it should be something different depending on how you set up your Shopify account)
+  * Remove /admin (and anything after it) so you are left with STORENAME.myshopify.com.
+
+    This is your base Shopify URL.
+
+2) Second, run the development server:
 
 ```bash
 npm run dev
